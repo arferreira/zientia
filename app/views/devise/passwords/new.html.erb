@@ -1,0 +1,28 @@
+<div class="container" style="padding-top:20px;">
+
+<div class="logo_login" style="margin-bottom:40px; ">
+
+	<center> <%= image_tag('/images/logo_zientia.png') %> </center>
+
+</div>
+<div class="error_login">
+<%= devise_error_messages! %>
+</div>
+<div class="form_login" style="position:relative; width:534px; height:309px; top:50%; left:25%; padding:30px; background:url('/images/box_login.png') no-repeat; padding-left:50px; padding-top:40px;">
+
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, :placeholder => "email@zientiaeducacional.com.br" %></div>
+  <br><br><br><br><br>
+  <div><%= f.submit "" %></div>
+<% end %>
+
+
+
+</div>
+
+</div>
+
+

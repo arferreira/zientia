@@ -1,0 +1,144 @@
+<div id="wrapper">
+  
+  <div id="header">
+    <h1><%= link_to image_tag('/images/logoz.png'), root_path %></h1>    
+    
+    <a href="javascript:;" id="reveal-nav">
+      <span class="reveal-bar"></span>
+      <span class="reveal-bar"></span>
+      <span class="reveal-bar"></span>
+    </a>
+  </div> <!-- #header -->
+  
+  <div id="search">
+    <form>
+      <input type="text" name="search" placeholder="Buscar..." id="searchField" />
+    </form>   
+  </div> <!-- #search -->
+  
+  <div id="sidebar">    
+    
+  	<%= render 'shared/menu_dashboard' %>
+        
+  </div> <!-- #sidebar -->
+  
+  <div id="content">    
+    
+    <div id="contentHeader">
+      <h1>Bem vindo <%= current_user.email.split('@').first %></h1>
+    </div> <!-- #contentHeader -->  
+    
+    <div class="container">
+      
+    <!-- trazer o yield do rails aqui  -->
+      
+    </div> <!-- .container -->
+    
+  </div> <!-- #content -->
+  
+  <div id="topNav">
+     <ul>
+      <li>
+        <a href="#menuProfile" class="menu"><%= current_user.email %></a>
+        
+        <div id="menuProfile" class="menu-container menu-dropdown">
+          <div class="menu-content">
+            <ul class="">
+              <li><a href="javascript:;">Perfil</a></li>
+              <li><a href="javascript:;">Desempenho</a></li>
+              <li><a href="javascript:;">Faltas</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+     </ul>
+  </div> <!-- #topNav -->
+  
+  <div id="quickNav">
+    <ul>
+      <li class="quickNavMail">
+        <a href="#menuAmpersand" class="menu"><span class="icon-book"></span></a>   
+        
+        <span class="alert">2</span>    
+
+        <div id="menuAmpersand" class="menu-container quickNavConfirm">
+          <div class="menu-content cf">             
+            
+            <div class="qnc qnc_confirm">
+              
+              <h3>Atividades</h3>
+          
+              <div class="qnc_item">
+                <div class="qnc_content">
+                  <span class="qnc_title">Atividade 1</span>
+                  <span class="qnc_preview">O  professor (x) adicionou você a uma atividade</span>
+                  <span class="qnc_time">1 min atrás</span>
+                </div> <!-- .qnc_content -->
+                
+                <div class="qnc_actions">           
+                  <button class="btn btn-primary btn-small">Fazer</button>
+                  <button class="btn btn-quaternary btn-small">Agora não</button>
+                </div>
+              </div>
+
+              <div class="qnc_item">
+                <div class="qnc_content">
+                  <span class="qnc_title">Atividade 2</span>
+                  <span class="qnc_preview">Atividade de Portugês para entregar hoje.</span>
+                  <span class="qnc_time">3 horas atrás</span>
+                </div> <!-- .qnc_content -->
+                
+                <div class="qnc_actions">           
+                  <button class="btn btn-primary btn-small">Fazer</button>
+                  <button class="btn btn-quaternary btn-small">Agora não</button>
+                </div>
+              </div>
+              
+              
+              
+              <a href="javascript:;" class="qnc_more">Visualizar atividades</a>
+                              
+            </div> <!-- .qnc -->  
+          </div>
+        </div>
+      </li>
+      <li class="quickNavNotification">
+        <a href="#menuPie" class="menu"><span class="icon-chat"></span></a>
+         <span class="alert">2</span> 
+        <div id="menuPie" class="menu-container">
+          <div class="menu-content cf">         
+            
+            <div class="qnc">
+              
+              <h3>Notificações</h3>
+          
+              <a href="javascript:;" class="qnc_item">
+                <div class="qnc_content">
+                  <span class="qnc_title">Aula apoio (Geografia)</span>
+                  <span class="qnc_preview">Aula de apoio ministrada pelo professor (X) as 16:30</span>
+                  <span class="qnc_time">3 horas atrás</span>
+                </div> <!-- .qnc_content -->
+              </a>
+              
+              <a href="javascript:;" class="qnc_item">
+                <div class="qnc_content">
+                  <span class="qnc_title">Parabéns!!!</span>
+                  <span class="qnc_preview">Parabéns, você atingiu a nota Dez em Portugês.</span>
+                  <span class="qnc_time">2 dias atrás</span>
+                </div> <!-- .qnc_content -->
+              </a>
+              
+              <a href="javascript:;" class="qnc_more">Visualizar todas</a>
+              
+            </div> <!-- .qnc -->
+          </div>
+        </div>        
+      </li>
+    </ul>   
+  </div> <!-- .quickNav -->
+</div> <!-- #wrapper -->
+
+
+
+
