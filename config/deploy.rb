@@ -44,12 +44,10 @@ before 'deploy:update_code' do
   deploy.check_folders
 end
 
-before "deploy:cold", 
+before "deploy:start", 
     "deploy:install_bundler"
 
-task :install_bundler, :roles => :app do
-    run "type -P bundle &>/dev/null || { gem install bundler --no-rdoc --no-ri; }"
-end
+
 
 namespace :deploy do
   # task :start do
@@ -82,6 +80,10 @@ namespace :deploy do
     run "cd #{current_path} && #{try_sudo} #{unicorn_binary} -c #{unicorn_config}" <<
         " -E #{rails_env} -D"
   end
+
+  task :install_bundler, :roles => :app do
+    run "type -P bundle &>/dev/null || { gem install bundler --no-rdoc --no-ri; }"
+   end
   
   # mata o serviço do unicorn
   desc "Stop Application"
