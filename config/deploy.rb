@@ -1,8 +1,5 @@
 require 'bundler/capistrano'
 
-set :default_environment, {
-  'PATH' => "/opt/local/ruby/gems/bin"
-}
 
 set :application, 'www.zientiaeducacional.com.br'
 
