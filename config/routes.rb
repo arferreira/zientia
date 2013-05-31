@@ -5,9 +5,9 @@ Zientia::Application.routes.draw do
 
   get "usuario/logar"
 
-  get "current", :to => 'current/index'
+  match 'current' => 'current#index'
 
-  #get "/current", :to => 'current/index'
+  #'get "/current", :to => 'current/index'
 
   devise_for :users
 
