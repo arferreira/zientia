@@ -1,7 +1,13 @@
 Zientia::Application.routes.draw do
+  get "current/index"
+
   get "dashboard/index"
 
   get "usuario/logar"
+
+  get "current", :to => 'current/index'
+
+  #get "/current", :to => 'current/index'
 
   devise_for :users
 
